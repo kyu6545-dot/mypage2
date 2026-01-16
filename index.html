@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026년 월간 업무 실행 캘린더 (공휴일 연동)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9; /* Slate 100 */
+            padding-top: 120px; /* Toolbar height */
+        }
+        .report-container {
+            width: 297mm; /* A4 Landscape Width */
+            min-height: 210mm; /* A4 Landscape Height */
+            margin: 20px auto;
+            background: white;
+            padding: 30px 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .header-navy {
+            background-color: #1e293b;
+            color: white;
+        }
+        .cell-height {
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: 8% repeat(5, 16.8%) 8%;
+        }
+
+        /* Task Container */
+        .task-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: visible;
+            padding: 2px 0;
+        }
+        
+        /* Basic Task Row */
+        .task-row {
+            flex: 1;
+            width: 100%;
+            outline: none;
+            font-size: 0.8rem;
+            color: #334155;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            padding: 2px 6px;
+            margin: 1px 2px;
+            border-bottom: 1px dashed #e2e8f0;
+            border-radius: 4px;
+            cursor: text;
+            min-height: 24px;
+            transition: all 0.1s;
+            position: relative;
+        }
+        .task-row:last-child {
+            border-bottom: none;
+        }
+        .task-row:focus {
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 20;
+            position: relative;
+        }
+
+        /* Completed Task Style */
+        .task-row.completed {
+            text-decoration: line-through;
+            color: #94a3b8; /* Slate 400 */
+            background-color: #f1f5f9 !important; /* Force light gray bg */
+            font-style: italic;
+        }
+        .task-row.completed::before {
+            content: "✔ ";
+            color: #10b981; /* Green check */
+            font-weight: bold;
+        }
+
+        /* Holiday Text Style */
+        .holiday-text-kr {
+            color: #ef4444; /* Red 500 */
+            font-weight: 700;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .holiday-text-us {
+            color: #2563eb; /* Blue 600 */
+            font-weight: 700;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Selected State */
+        .selected-row {
+            box-shadow: inset 0 0 0 2px #2563eb !important;
+            z-index: 10;
+        }
+
+        /* Merged/Connected Bar Styling */
+        .task-row.connected {
+            border-bottom: none;
+            margin-left: 0;
+            margin-right: 0;
+            border-radius: 0;
+            color: #1e293b; 
+            font-weight: 500;
+        }
+        .task-row.bar-start {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            margin-left: 2px;
+            margin-right: -1px;
+            z-index: 5;
+            padding-right: 0;
+        }
+        .task-row.bar-mid {
+            border-radius: 0;
+            margin-left: -1px;
+            margin-right: -1px;
+            z-index: 5;
+            color: transparent;
+        }
+        .task-row.bar-mid:focus {
+            color: #1e293b;
+        }
+        .task-row.bar-end {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            margin-left: -1px;
+            margin-right: 2px;
+            z-index: 5;
+            padding-left: 0;
+        }
+
+        /* Toolbar */
+        .color-toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #cbd5e1;
+            padding: 10px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            z-index: 50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .color-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #cbd5e1;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        .color-btn:hover { transform: scale(1.1); }
+        
+        .tool-btn {
+            padding: 4px 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #475569;
+            background-color: #f8fafc;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        .tool-btn:hover { background-color: #e2e8f0; color: #1e293b; }
+        .tool-btn.active { background-color: #dbeafe; border-color: #3b82f6; color: #1d4ed8; }
+
+        .divider { width: 1px; height: 20px; background: #e2e8f0; margin: 0 2px; }
+
+        /* Date Navigation Styles */
+        .date-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+        .date-display {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #1e293b;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Save Status Indicator */
+        #saveStatus {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-left: auto;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        @media print {
+            @page { size: landscape; margin: 5mm; }
+            body { background: none; margin: 0; padding-top: 0; }
+            .report-container { margin: 0; box-shadow: none; width: 100%; padding: 0; }
+            .no-print { display: none !important; }
+            .selected-row { box-shadow: none !important; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .task-row.bar-start, .task-row.bar-mid, .task-row.bar-end {
+                box-shadow: none;
+                border: none; 
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800" onload="init()">
+
+    <!-- Toolbar -->
+    <div class="color-toolbar no-print">
+        
+        <!-- Date Navigation -->
+        <div class="date-nav">
+            <button onclick="changeMonth(-1)" class="tool-btn hover:bg-white text-lg px-2">◀</button>
+            <span id="currentDateDisplay" class="date-display">2026.02</span>
+            <button onclick="changeMonth(1)" class="tool-btn hover:bg-white text-lg px-2">▶</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Save/Load Group -->
+        <div class="flex items-center gap-2 bg-slate-50 p-1 rounded border border-slate-200">
+            <span class="text-[10px] font-bold text-slate-500">데이터:</span>
+            <button onclick="saveDataManual()" class="tool-btn text-emerald-600 border-emerald-200 bg-emerald-50 hover:bg-emerald-100">💾 저장</button>
+            <button onclick="resetCurrentMonth()" class="tool-btn text-red-600 hover:bg-red-50">🗑 현재달 초기화</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Structure Tools -->
+        <div class="flex items-center gap-2">
+            <span class="text-[10px] font-bold text-slate-500">구조:</span>
+            <button onclick="addRow()" class="tool-btn text-blue-600">➕ 행 추가</button>
+            <button onclick="deleteRow()" class="tool-btn text-red-600">➖ 행 삭제</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Merge Tools -->
+        <div class="flex items-center gap-2">
+            <span class="text-[10px] font-bold text-slate-500">병합:</span>
+            <button id="multiSelectBtn" onclick="toggleMultiSelect()" class="tool-btn" title="Ctrl+클릭도 가능">
+                ☑️ 다중선택 <span id="multiStatus" class="text-[9px] ml-1 text-slate-400">(OFF)</span>
+            </button>
+            <button onclick="connectRows()" class="tool-btn text-indigo-700 bg-indigo-50 border-indigo-200">🔗 연결</button>
+            <button onclick="disconnectRows()" class="tool-btn text-slate-600">💔 해제</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Completion Tool -->
+         <div class="flex items-center gap-2">
+            <button onclick="toggleComplete()" class="tool-btn text-slate-700 border-slate-300" title="완료 처리">
+                ✔ 완료
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Color Tools -->
+        <div class="flex items-center gap-1">
+            <span class="text-[10px] font-bold text-slate-500">배경색:</span>
+            <button onclick="applyColor('bg-white')" class="color-btn bg-white" title="기본"></button>
+            <button onclick="applyColor('bg-slate-50')" class="color-btn bg-slate-50 border-slate-200" title="회색"></button>
+            <button onclick="applyColor('bg-red-50')" class="color-btn bg-red-50 border-red-200" title="빨강(휴일)"></button>
+            <button onclick="applyColor('bg-orange-50')" class="color-btn bg-orange-50 border-orange-200" title="주황"></button>
+            <button onclick="applyColor('bg-yellow-50')" class="color-btn bg-yellow-50 border-yellow-200" title="노랑"></button>
+            <button onclick="applyColor('bg-green-50')" class="color-btn bg-green-50 border-green-200" title="초록"></button>
+            <button onclick="applyColor('bg-blue-50')" class="color-btn bg-blue-50 border-blue-200" title="파랑"></button>
+            <button onclick="applyColor('bg-indigo-50')" class="color-btn bg-indigo-50 border-indigo-200" title="남색"></button>
+            <button onclick="applyColor('bg-purple-50')" class="color-btn bg-purple-50 border-purple-200" title="보라"></button>
+        </div>
+        
+        <!-- Save Status & Print -->
+        <div id="saveStatus"></div>
+        <button onclick="window.print()" class="px-3 py-1 bg-slate-800 text-white text-xs rounded hover:bg-slate-700 font-bold ml-2">🖨 인쇄</button>
+    </div>
+
+    <!-- Report Page -->
+    <div class="report-container">
+        
+        <!-- Header -->
+        <header class="mb-6 border-b-4 border-slate-800 pb-2">
+            <div class="flex justify-between items-end">
+                <div>
+                    <!-- Title is now dynamic -->
+                    <h1 class="text-3xl font-bold tracking-tight text-slate-900">
+                        <span id="titleYear">2026</span>년 <span id="titleMonth">02</span>월 월간 업무 실행 캘린더
+                    </h1>
+                    <p class="text-slate-500 mt-1 font-medium text-sm">미국주식팀 | 작성일: <span contenteditable="true" class="hover:bg-slate-100 px-1 rounded cursor-text border-b border-transparent hover:border-slate-300 transition-colors">2026.XX.XX</span></p>
+                </div>
+                <div class="text-right flex items-end gap-2">
+                    <div class="border border-slate-400 w-20 h-16 relative bg-white">
+                        <span class="absolute top-1 left-1 text-[10px] text-slate-500">팀장</span>
+                        <div class="border-b border-slate-200 absolute bottom-2 left-2 right-2"></div>
+                    </div>
+                    <div class="border border-slate-400 w-20 h-16 relative bg-white">
+                        <span class="absolute top-1 left-1 text-[10px] text-slate-500">회장</span>
+                        <div class="border-b border-slate-200 absolute bottom-2 left-2 right-2"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Calendar Wrapper -->
+        <div class="w-full border-t border-l border-slate-300 text-sm shadow-sm">
+            <!-- Header Row -->
+            <div class="calendar-grid header-navy text-center font-bold">
+                <div class="p-1 border-r border-b border-slate-300 bg-slate-200 text-slate-500 text-xs">Sun</div>
+                <div class="p-1 border-r border-b border-slate-300">Mon</div>
+                <div class="p-1 border-r border-b border-slate-300">Tue</div>
+                <div class="p-1 border-r border-b border-slate-300">Wed</div>
+                <div class="p-1 border-r border-b border-slate-300">Thu</div>
+                <div class="p-1 border-r border-b border-slate-300">Fri</div>
+                <div class="p-1 border-b border-slate-300 bg-slate-200 text-slate-500 text-xs">Sat</div>
+            </div>
+
+            <!-- Dynamic Calendar Body -->
+            <div id="calendar-dates" class="calendar-grid">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Hardcoded Holiday Data for 2026 ---
+        const HOLIDAYS_2026 = {
+            // Format: "Month-Day": [{country: 'KR'|'US', name: 'Name'}]
+            // Month is 1-based index to match render logic
+            "1-1": [
+                {country: 'KR', name: '신정'},
+                {country: 'US', name: "New Year's Day"}
+            ],
+            "1-19": [{country: 'US', name: "MLK Jr. Day (휴장)"}],
+            "2-16": [
+                {country: 'KR', name: '설날 연휴'},
+                {country: 'US', name: "Washington's Birthday (휴장)"}
+            ],
+            "2-17": [{country: 'KR', name: '설날'}],
+            "2-18": [{country: 'KR', name: '설날 연휴'}],
+            "3-1": [{country: 'KR', name: '삼일절'}],
+            "3-2": [{country: 'KR', name: '대체공휴일(삼일절)'}],
+            "4-3": [{country: 'US', name: "Good Friday (휴장)"}],
+            "5-5": [{country: 'KR', name: '어린이날'}],
+            "5-24": [{country: 'KR', name: '부처님오신날'}],
+            "5-25": [
+                {country: 'KR', name: '대체공휴일(부처님오신날)'},
+                {country: 'US', name: "Memorial Day (휴장)"}
+            ],
+            "6-6": [{country: 'KR', name: '현충일'}],
+            "6-19": [{country: 'US', name: "Juneteenth (휴장)"}],
+            "7-3": [{country: 'US', name: "Independence Day (휴장)"}],
+            "8-15": [{country: 'KR', name: '광복절'}],
+            "8-17": [{country: 'KR', name: '대체공휴일(광복절)'}],
+            "9-7": [{country: 'US', name: "Labor Day (휴장)"}],
+            "9-25": [{country: 'KR', name: '추석 연휴'}],
+            "9-26": [{country: 'KR', name: '추석'}],
+            "9-27": [{country: 'KR', name: '추석 연휴'}],
+            "9-28": [{country: 'KR', name: '대체공휴일(추석)'}],
+            "10-3": [{country: 'KR', name: '개천절'}],
+            "10-5": [{country: 'KR', name: '대체공휴일(개천절)'}],
+            "10-9": [{country: 'KR', name: '한글날'}],
+            "11-26": [{country: 'US', name: "Thanksgiving (휴장)"}],
+            "12-25": [
+                {country: 'KR', name: '크리스마스'},
+                {country: 'US', name: "Christmas (휴장)"}
+            ]
+        };
+
+        // --- State Management ---
+        let currentYear = 2026;
+        let currentMonth = 2; // 1-based index (2 = Feb)
+        let selectedRows = [];
+        let isMultiSelectMode = false;
+        
+        // --- Initialization ---
+        function init() {
+            // Check URL params or default to 2026-02
+            renderCalendar(currentYear, currentMonth);
+            loadData(); // Load saved data for this specific month
+            
+            // Auto-save interval
+            setInterval(() => saveData(), 30000);
+            
+            // Auto-save on input
+            document.getElementById('calendar-dates').addEventListener('input', debounce(function() {
+                saveData();
+            }, 2000));
+        }
+
+        // --- Core Calendar Logic ---
+        function renderCalendar(year, month) {
+            const calendarEl = document.getElementById('calendar-dates');
+            calendarEl.innerHTML = ''; // Clear existing
+
+            // Update Header UI
+            document.getElementById('titleYear').innerText = year;
+            document.getElementById('titleMonth').innerText = String(month).padStart(2, '0');
+            document.getElementById('currentDateDisplay').innerText = `${year}.${String(month).padStart(2, '0')}`;
+
+            // Calculate Dates
+            const firstDay = new Date(year, month - 1, 1).getDay(); // 0(Sun) - 6(Sat)
+            const lastDate = new Date(year, month, 0).getDate(); // 28, 29, 30, 31
+
+            // 1. Render Empty Cells for prev month
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement('div');
+                emptyCell.className = "day-cell border-r border-b border-slate-300 cell-height bg-slate-50/50";
+                calendarEl.appendChild(emptyCell);
+            }
+
+            // 2. Render Actual Dates
+            for (let date = 1; date <= lastDate; date++) {
+                const dayOfWeek = new Date(year, month - 1, date).getDay();
+                
+                // Determine styling based on day
+                let dateColorClass = "text-slate-400"; // Default
+                let bgClass = "bg-white";
+                
+                // Holiday Check
+                const holidayKey = `${month}-${date}`;
+                const holidays = HOLIDAYS_2026[holidayKey];
+                let holidayHtml = '';
+
+                if (holidays) {
+                    // Set holiday background
+                    bgClass = "bg-red-50"; 
+                    if (holidays.some(h => h.country === 'KR')) dateColorClass = "text-red-500"; // KR holidays make date red
+                    
+                    // Generate holiday text blocks
+                    holidays.forEach(h => {
+                        if(h.country === 'KR') {
+                            holidayHtml += `<div class="holiday-text-kr" contenteditable="false">🇰🇷 ${h.name}</div>`;
+                        } else {
+                            holidayHtml += `<div class="holiday-text-us" contenteditable="false">🇺🇸 ${h.name}</div>`;
+                        }
+                    });
+                } else {
+                    // Normal weekend styling if not a holiday
+                    if (dayOfWeek === 0) { // Sunday
+                        dateColorClass = "text-red-400";
+                    } else if (dayOfWeek === 6) { // Saturday
+                        dateColorClass = "text-blue-400";
+                    }
+                }
+
+                // Cell HTML Structure
+                const cell = document.createElement('div');
+                cell.className = `day-cell border-b border-slate-300 cell-height ${bgClass}`;
+                if (dayOfWeek !== 6) cell.classList.add('border-r'); // Add right border except Sat
+
+                // Date Number Header
+                const headerHtml = `
+                    <div class="h-6 flex items-center justify-between px-2 border-b border-slate-100 flex-none select-none">
+                        <span class="font-bold text-xs ${dateColorClass}">${date}</span>
+                    </div>
+                `;
+
+                // Task Area
+                // If holiday, inject holiday HTML first, then empty editable rows
+                const taskAreaHtml = `
+                    <div class="task-container">
+                        ${holidayHtml}
+                        <div class="task-row" contenteditable="true" onclick="handleRowClick(this, event)"></div>
+                    </div>
+                `;
+
+                cell.innerHTML = headerHtml + taskAreaHtml;
+                calendarEl.appendChild(cell);
+            }
+
+            // 3. Fill remaining grid cells to keep layout neat
+            const totalCells = firstDay + lastDate;
+            const remaining = 7 - (totalCells % 7);
+            if (remaining < 7) {
+                for (let i = 0; i < remaining; i++) {
+                     const emptyCell = document.createElement('div');
+                     emptyCell.className = "day-cell border-b border-slate-300 cell-height bg-slate-50/50";
+                     if (i < remaining - 1) emptyCell.classList.add('border-r');
+                     calendarEl.appendChild(emptyCell);
+                }
+            }
+        }
+
+        function changeMonth(offset) {
+            // Save current month before switching
+            saveData();
+            
+            // Update state
+            currentMonth += offset;
+            if (currentMonth > 12) {
+                currentMonth = 1;
+                currentYear++;
+            } else if (currentMonth < 1) {
+                currentMonth = 12;
+                currentYear--;
+            }
+
+            // Clear selection
+            clearSelection();
+
+            // Render new month
+            renderCalendar(currentYear, currentMonth);
+            
+            // Load data for the new month
+            loadData();
+        }
+
+        // --- Save & Load Logic ---
+        function getStorageKey() {
+            return `calendar_data_${currentYear}_${currentMonth}`;
+        }
+
+        function saveDataManual() {
+            saveData(true);
+        }
+
+        function saveData(showMsg = false) {
+            const container = document.getElementById('calendar-dates').innerHTML;
+            const key = getStorageKey();
+            localStorage.setItem(key, container);
+            
+            const statusEl = document.getElementById('saveStatus');
+            const time = new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            
+            if(showMsg) {
+                alert(`${currentYear}년 ${currentMonth}월 데이터가 저장되었습니다.`);
+            }
+            statusEl.innerText = `저장됨: ${time}`;
+            statusEl.style.color = '#10b981'; // green
+            setTimeout(() => { statusEl.style.color = '#64748b'; }, 2000);
+        }
+
+        function loadData() {
+            const key = getStorageKey();
+            const saved = localStorage.getItem(key);
+            
+            if (saved) {
+                // If saved data exists, use it. 
+                // However, if we just rendered holidays dynamically in renderCalendar(),
+                // loading old HTML might overwrite the holiday indicators if the saved data didn't have them.
+                // But typically, user wants to see what they saved.
+                // Strategy: We load saved data. If user resets, they get fresh holidays.
+                document.getElementById('calendar-dates').innerHTML = saved;
+                reattachListeners(); 
+                document.getElementById('saveStatus').innerText = "데이터 로드됨";
+            }
+        }
+
+        function resetCurrentMonth() {
+            if(confirm(`${currentYear}년 ${currentMonth}월 데이터를 모두 초기화 하시겠습니까?`)) {
+                localStorage.removeItem(getStorageKey());
+                renderCalendar(currentYear, currentMonth); // Re-render clean with holidays
+            }
+        }
+
+        // --- Helper Functions ---
+        function reattachListeners() {
+            const rows = document.querySelectorAll('.task-row');
+            rows.forEach(row => {
+                row.onclick = function(e) { handleRowClick(this, e); };
+            });
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        // --- Row Manipulation Logic (Same as before) ---
+        function toggleMultiSelect() {
+            isMultiSelectMode = !isMultiSelectMode;
+            const btn = document.getElementById('multiSelectBtn');
+            const status = document.getElementById('multiStatus');
+            
+            if (isMultiSelectMode) {
+                btn.classList.add('active');
+                status.innerText = "(ON)";
+            } else {
+                btn.classList.remove('active');
+                status.innerText = "(OFF)";
+                clearSelection();
+            }
+        }
+
+        function handleRowClick(element, event) {
+            if (event) event.stopPropagation();
+
+            const isCtrlPressed = event.ctrlKey || event.metaKey;
+
+            if (isMultiSelectMode || isCtrlPressed) {
+                if (selectedRows.includes(element)) {
+                    element.classList.remove('selected-row');
+                    selectedRows = selectedRows.filter(row => row !== element);
+                } else {
+                    element.classList.add('selected-row');
+                    selectedRows.push(element);
+                }
+            } else {
+                clearSelection();
+                element.classList.add('selected-row');
+                selectedRows.push(element);
+            }
+        }
+
+        function clearSelection() {
+            selectedRows.forEach(row => row.classList.remove('selected-row'));
+            selectedRows = [];
+        }
+
+        function applyColor(colorClass) {
+            if (selectedRows.length === 0) {
+                alert('색상을 변경할 행을 먼저 선택해주세요.');
+                return;
+            }
+            selectedRows.forEach(row => {
+                const bgClasses = Array.from(row.classList).filter(cls => cls.startsWith('bg-'));
+                bgClasses.forEach(cls => row.classList.remove(cls));
+                row.classList.add(colorClass);
+            });
+            saveData();
+        }
+
+        function connectRows() {
+            if (selectedRows.length < 2) {
+                alert('연결하려면 최소 2개 이상의 행을 선택해야 합니다.');
+                return;
+            }
+            const allRows = Array.from(document.querySelectorAll('.task-row'));
+            selectedRows.sort((a, b) => allRows.indexOf(a) - allRows.indexOf(b));
+
+            selectedRows.forEach((row, index) => {
+                row.classList.add('connected');
+                row.classList.remove('bar-start', 'bar-mid', 'bar-end');
+
+                if (index === 0) row.classList.add('bar-start');
+                else if (index === selectedRows.length - 1) row.classList.add('bar-end');
+                else row.classList.add('bar-mid');
+            });
+
+            const hasColor = selectedRows[0].className.includes('bg-');
+            if (!hasColor) applyColor('bg-indigo-100');
+            saveData();
+        }
+
+        function disconnectRows() {
+            if (selectedRows.length === 0) {
+                alert('해제할 행을 선택해주세요.');
+                return;
+            }
+            selectedRows.forEach(row => {
+                row.classList.remove('connected', 'bar-start', 'bar-mid', 'bar-end');
+            });
+            saveData();
+        }
+
+        function addRow() {
+            if (selectedRows.length === 0) {
+                alert('행을 추가할 위치의 칸(행)을 선택해주세요.');
+                return;
+            }
+            const targetRow = selectedRows[selectedRows.length - 1];
+            const newRow = document.createElement('div');
+            newRow.className = 'task-row';
+            newRow.contentEditable = "true";
+            newRow.onclick = function(e) { handleRowClick(this, e); };
+            
+            if (targetRow.parentNode) {
+                targetRow.parentNode.insertBefore(newRow, targetRow.nextSibling);
+            }
+            saveData();
+        }
+
+        function deleteRow() {
+            if (selectedRows.length === 0) {
+                alert('삭제할 행을 선택해주세요.');
+                return;
+            }
+            if (!confirm(`선택한 ${selectedRows.length}개의 행을 삭제하시겠습니까?`)) return;
+
+            selectedRows.forEach(row => {
+                const parent = row.parentNode;
+                if (parent && parent.children.length > 0) {
+                     parent.removeChild(row);
+                }
+            });
+            selectedRows = [];
+            saveData();
+        }
+
+        function toggleComplete() {
+            if (selectedRows.length === 0) {
+                alert('상태를 변경할 업무(행)를 선택해주세요.');
+                return;
+            }
+            selectedRows.forEach(row => {
+                row.classList.toggle('completed');
+            });
+            saveData();
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.day-cell') && !e.target.closest('.color-toolbar')) {
+                clearSelection();
+            }
+        });
+    </script>
+</body>
+</html>
