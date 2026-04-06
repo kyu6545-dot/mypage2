@@ -228,6 +228,8 @@ def write_outputs(output_dir: Path, matrix: pd.DataFrame, audit_rows: list[dict[
         "end_date": end_date,
         "field": "adjusted_close",
         "matrix_rows": int(matrix.shape[0]),
+        "first_price_date": matrix.index.min().date().isoformat() if not matrix.empty else "",
+        "last_price_date": matrix.index.max().date().isoformat() if not matrix.empty else "",
         "ticker_count": int(len(audit_rows)),
         "success_count": int(len(ok_rows)),
         "error_count": int(len(error_rows)),
