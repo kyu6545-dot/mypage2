@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "15 22 * * 1-5"
 
+permissions:
+  contents: write
+
 jobs:
   refresh-openbb-data:
     runs-on: ubuntu-latest
@@ -12,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
