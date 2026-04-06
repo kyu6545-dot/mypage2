@@ -1,14 +1,14 @@
 {
   "provider": "openbb_yfinance_fetcher",
-  "generated_at": "2026-04-06T05:21:49Z",
+  "generated_at": "2026-04-06T05:34:43Z",
   "start_date": "2020-01-02",
   "end_date": "2026-04-06",
   "field": "adjusted_close",
   "matrix_rows": 1571,
   "first_price_date": "2020-01-02",
   "last_price_date": "2026-04-02",
-  "ticker_count": 44,
-  "success_count": 44,
+  "ticker_count": 45,
+  "success_count": 45,
   "error_count": 0,
   "success_tickers": [
     "QQQ",
@@ -54,7 +54,8 @@
     "SLV",
     "USAR",
     "USO",
-    "VRT"
+    "VRT",
+    "NOK"
   ],
   "failed_tickers": []
 }
