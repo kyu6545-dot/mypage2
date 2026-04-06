@@ -1,0 +1,2 @@
+active,ticker,provider_symbol,display_name,asset_type,benchmark,notes
+TRUE,QQQ,QQQ,Invesco QQQ Trust,etf,TRUE,default benchmark

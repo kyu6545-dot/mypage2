@@ -1,0 +1,2 @@
+﻿active,ticker,provider_symbol,display_name,asset_type,benchmark,import_status,rows_fetched,first_date,last_price_date,notes,error
+True,QQQ,QQQ,Invesco QQQ Trust,etf,True,ok,1571,2020-01-02,2026-04-02,default benchmark,

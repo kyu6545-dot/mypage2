@@ -1,0 +1,38 @@
+name: OpenBB Data Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 22 * * 1-5"
+
+jobs:
+  refresh-openbb-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install OpenBB
+        run: |
+          python -m pip install --upgrade pip
+          pip install openbb pandas
+
+      - name: Build price artifacts
+        working-directory: openbb-data-pipeline
+        run: |
+          python build_openbb_dataset.py --start-date 2020-01-02
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add openbb-data-pipeline/data
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh OpenBB market data"
+          git push
