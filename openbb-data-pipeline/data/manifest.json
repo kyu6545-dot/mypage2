@@ -1,13 +1,13 @@
 {
   "provider": "openbb_yfinance_fetcher",
-  "generated_at": "2026-04-06T04:40:07Z",
+  "generated_at": "2026-04-06T04:49:43Z",
   "start_date": "2020-01-02",
   "end_date": "2026-04-06",
   "field": "adjusted_close",
   "matrix_rows": 1571,
   "ticker_count": 20,
-  "success_count": 19,
-  "error_count": 1,
+  "success_count": 20,
+  "error_count": 0,
   "success_tickers": [
     "QQQ",
     "AMZN",
@@ -25,11 +25,10 @@
     "FIGR",
     "FSLY",
     "LITE",
+    "NBIS",
     "NVT",
     "PL",
     "USO"
   ],
-  "failed_tickers": [
-    "데이터 메모"
-  ]
+  "failed_tickers": []
 }
