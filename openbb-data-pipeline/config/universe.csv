@@ -1,46 +1,65 @@
 active,ticker,provider_symbol,display_name,asset_type,sector,industry,benchmark
 TRUE,QQQ,QQQ,Invesco QQQ Trust,etf,벤치마크,NASDAQ 100 ETF,TRUE
-TRUE,AAOI,AAOI,,,IT,AI 하드웨어 - 네트워크,FALSE
-TRUE,ADBE,ADBE,,equity,IT,AI 소프트웨어 - 크리에이티브 SaaS,FALSE
-TRUE,ALM,ALM,,equity,신성장,전략광물 - 텅스텐,FALSE
-TRUE,AMZN,AMZN,,,IT,AI 소프트웨어 - 인프라,FALSE
-TRUE,APP,APP,,equity,IT,AI 소프트웨어 - 광고 플랫폼,FALSE
+TRUE,AAOI,AAOI,,,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
+TRUE,ADBE,ADBE,,equity,IT,AI 소프트웨어 - SaaS,FALSE
+TRUE,ALM,ALM,,equity,신성장,전략광물 - 희토류,FALSE
+TRUE,AMZN,AMZN,,,IT,AI 소프트웨어 - 클라우드,FALSE
+TRUE,APP,APP,,equity,IT,AI 소프트웨어 - 광고,FALSE
 TRUE,AVGO,AVGO,,,IT,AI 하드웨어 - ASIC,FALSE
 TRUE,BE,BE,,equity,신성장,청정에너지 - 연료전지,FALSE
 TRUE,COIN,COIN,,,신성장,암호화폐 - 거래소,FALSE
 TRUE,CRCL,CRCL,,,신성장,암호화폐 - 핀테크,FALSE
-TRUE,CRML,CRML,,equity,신성장,전략광물 - 리튬/희토류,FALSE
-TRUE,CRWV,CRWV,,equity,IT,AI 소프트웨어 - 클라우드 인프라,FALSE
+TRUE,CRML,CRML,,equity,신성장,전략광물 - 희토류,FALSE
+TRUE,CRWV,CRWV,,equity,IT,AI 소프트웨어 - 네오클라우드,FALSE
 TRUE,CVNA,CVNA,,equity,경기소비재,이커머스 - 중고차 플랫폼,FALSE
 TRUE,FIGR,FIGR,,equity,신성장,암호화폐 - 핀테크,FALSE
-TRUE,FSLR,FSLR,,equity,신성장,태양광 - 모듈,FALSE
+TRUE,FSLR,FSLR,,equity,신성장,태양광,FALSE
 TRUE,FSLY,FSLY,,equity,IT,AI 소프트웨어 - 엣지클라우드/CDN,FALSE
 TRUE,GEV,GEV,,equity,신성장,전력인프라 - 전력설비/그리드,FALSE
 TRUE,GLD,GLD,,etf,원자재,귀금속 - 금 ETF,FALSE
-TRUE,HOOD,HOOD,,equity,신성장,핀테크 - 브로커리지,FALSE
-TRUE,IONQ,IONQ,,equity,신성장,양자컴퓨팅 - 양자하드웨어,FALSE
+TRUE,HOOD,HOOD,,equity,신성장,핀테크 - 거래소,FALSE
+TRUE,IONQ,IONQ,,equity,신성장,양자컴퓨팅,FALSE
 TRUE,LITE,LITE,,equity,IT,AI 하드웨어 - 광통신,FALSE
 TRUE,LLY,LLY,,equity,헬스케어,바이오 - 비만치료제,FALSE
-TRUE,META,META,,equity,IT,AI 소프트웨어 - 플랫폼/광고,FALSE
+TRUE,META,META,,equity,IT,AI 소프트웨어 - 광고,FALSE
 TRUE,MP,MP,,equity,신성장,전략광물 - 희토류,FALSE
 TRUE,MRVL,MRVL,,equity,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
 TRUE,MU,MU,,,IT,AI 하드웨어 - 메모리,FALSE
-TRUE,NBIS,NBIS,,equity,IT,AI 소프트웨어 - 클라우드 인프라,FALSE
-TRUE,NFLX,NFLX,,equity,IT,플랫폼 - 스트리밍,FALSE
+TRUE,NBIS,NBIS,,equity,IT,AI 소프트웨어 - 네오클라우드,FALSE
+TRUE,NFLX,NFLX,,equity,IT,플랫폼,FALSE
 TRUE,NKE,NKE,,equity,경기소비재,브랜드 - 스포츠웨어,FALSE
 TRUE,NOK,NOK,,equity,IT,AI 하드웨어 - 통신장비,FALSE
 TRUE,NVDA,NVDA,,,IT,AI 하드웨어 - GPU,FALSE
 TRUE,NVT,NVT,,equity,IT,AI 하드웨어 - 전력/냉각 인프라,FALSE
-TRUE,NXT,NXT,,equity,신성장,태양광 - 트래커,FALSE
+TRUE,NXT,NXT,,equity,신성장,태양광,FALSE
 TRUE,OKLO,OKLO,,,신성장,원자력 - SMR,FALSE
-TRUE,ORCL,ORCL,,,IT,AI 소프트웨어 - 인프라,FALSE
+TRUE,ORCL,ORCL,,,IT,AI 소프트웨어 - 네오클라우드,FALSE
 TRUE,PL,PL,,,신성장,우주/방산,FALSE
-TRUE,PLTR,PLTR,,equity,IT,AI 소프트웨어 - 데이터/국방 AI,FALSE
+TRUE,PLTR,PLTR,,equity,IT,AI 소프트웨어 - SaaS,FALSE
 TRUE,QCOM,QCOM,,equity,IT,AI 하드웨어 - 모바일칩/엣지AI,FALSE
-TRUE,RDW,RDW,,equity,신성장,우주/방산 - 우주인프라,FALSE
+TRUE,RDW,RDW,,equity,신성장,우주/방산 - 우주/방산,FALSE
 TRUE,SLV,SLV,,etf,원자재,귀금속 - 은 ETF,FALSE
 TRUE,TSLA,TSLA,,,신성장,전기차/로봇,FALSE
 TRUE,TSM,TSM,,,IT,AI 하드웨어 - 파운드리,FALSE
-TRUE,USAR,USAR,,equity,신성장,전략광물 - 희토류/자석,FALSE
+TRUE,USAR,USAR,,equity,신성장,전략광물 - 희토류,FALSE
 TRUE,USO,USO,,etf,원자재,에너지 - 원유 ETF,FALSE
 TRUE,VRT,VRT,,equity,IT,AI 하드웨어 - 전력/냉각 인프라,FALSE
+FALSE,ACHR,ACHR,,,,,FALSE
+FALSE,AMAT,AMAT,,,,,FALSE
+FALSE,APLD,APLD,,,,,FALSE
+FALSE,ASML,ASML,,,,,FALSE
+FALSE,ASTS,ASTS,,,,,FALSE
+FALSE,AVAV,AVAV,,,,,FALSE
+FALSE,CEG,CEG,,,,,FALSE
+FALSE,CRDO,CRDO,,,,,FALSE
+FALSE,GOOGL,GOOGL,,,,,FALSE
+FALSE,IREN,IREN,,,,,FALSE
+FALSE,JOBY,JOBY,,,,,FALSE
+FALSE,KTOS,KTOS,,,,,FALSE
+FALSE,LRCX,LRCX,,,,,FALSE
+FALSE,MOD,MOD,,,,,FALSE
+FALSE,NEE,NEE,,,,,FALSE
+FALSE,QBTS,QBTS,,,,,FALSE
+FALSE,RKLB,RKLB,,,,,FALSE
+FALSE,VIAV,VIAV,,,,,FALSE
+FALSE,VST,VST,,,,,FALSE
