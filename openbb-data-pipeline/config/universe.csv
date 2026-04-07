@@ -1,6 +1,6 @@
 active,ticker,provider_symbol,display_name,asset_type,sector,industry,benchmark
 TRUE,QQQ,QQQ,Invesco QQQ Trust,etf,벤치마크,NASDAQ 100 ETF,TRUE
-TRUE,AAOI,AAOI,,,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
+TRUE,AAOI,AAOI,,equity,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
 TRUE,ACHR,ACHR,,,신성장,UAM,FALSE
 TRUE,ADBE,ADBE,,equity,IT,AI 소프트웨어 - SaaS,FALSE
 TRUE,ALM,ALM,,equity,신성장,전략광물 - 희토류,FALSE
@@ -40,7 +40,7 @@ TRUE,MP,MP,,equity,신성장,전략광물 - 희토류,FALSE
 TRUE,MRVL,MRVL,,equity,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
 TRUE,MU,MU,,,IT,AI 하드웨어 - 메모리,FALSE
 TRUE,NBIS,NBIS,,equity,IT,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,NEE,NEE,,,신성장,전력,FALSE
+TRUE,NEE,NEE,,,전통,전력,FALSE
 TRUE,NFLX,NFLX,,equity,IT,플랫폼,FALSE
 TRUE,NKE,NKE,,equity,전통,브랜드 - 스포츠웨어,FALSE
 TRUE,NOK,NOK,,equity,IT,AI 하드웨어 - 통신장비,FALSE
@@ -49,7 +49,7 @@ TRUE,NVT,NVT,,equity,IT,AI 하드웨어 - 전력/냉각 인프라,FALSE
 TRUE,NXT,NXT,,equity,신성장,태양광,FALSE
 TRUE,OKLO,OKLO,,,신성장,원자력 - SMR,FALSE
 TRUE,ORCL,ORCL,,,IT,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,PL,PL,,,신성장,우주/방산,FALSE
+TRUE,PL,PL,,equity,신성장,우주/방산,FALSE
 TRUE,PLTR,PLTR,,equity,IT,AI 소프트웨어 - SaaS,FALSE
 TRUE,QBTS,QBTS,,,신성장,양자컴퓨팅,FALSE
 TRUE,QCOM,QCOM,,equity,IT,AI 하드웨어 - 모바일칩/엣지AI,FALSE
@@ -60,6 +60,6 @@ TRUE,TSLA,TSLA,,,신성장,전기차/로봇,FALSE
 TRUE,TSM,TSM,,,IT,AI 하드웨어 - 파운드리,FALSE
 TRUE,USAR,USAR,,equity,신성장,전략광물 - 희토류,FALSE
 TRUE,USO,USO,,etf,원자재,에너지 - 원유 ETF,FALSE
-TRUE,VIAV,VIAV,,,,,FALSE
+TRUE,VIAV,VIAV,,,IT,AI 하드웨어 - 반도체 장비,FALSE
 TRUE,VRT,VRT,,equity,IT,AI 하드웨어 - 전력/냉각 인프라,FALSE
-TRUE,VST,VST,,,,,FALSE
+TRUE,VST,VST,,,전통,에너지,FALSE
