@@ -1,8 +1,8 @@
 {
   "provider": "openbb_yfinance_fetcher",
-  "generated_at": "2026-04-07T23:13:44Z",
+  "generated_at": "2026-04-08T01:22:32Z",
   "start_date": "2020-01-02",
-  "end_date": "2026-04-07",
+  "end_date": "2026-04-08",
   "field": "adjusted_close",
   "matrix_rows": 1573,
   "first_price_date": "2020-01-02",
