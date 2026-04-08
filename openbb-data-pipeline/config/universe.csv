@@ -1,65 +1,65 @@
 active,ticker,provider_symbol,display_name,asset_type,sector,industry,benchmark
-TRUE,QQQ,QQQ,Invesco QQQ Trust,etf,벤치마크,Index ETF,TRUE
-TRUE,AAOI,AAOI,,equity,IT,IT,FALSE
-TRUE,ACHR,ACHR,,,신성장,신성장,FALSE
-TRUE,ADBE,ADBE,Adobe Inc.,equity,IT,Software & Services,FALSE
-TRUE,ALM,ALM,Almonty Industries Inc.,equity,신성장,Materials,FALSE
-TRUE,AMAT,AMAT,,,IT,IT,FALSE
-TRUE,AMZN,AMZN,,,IT,IT,FALSE
-TRUE,APLD,APLD,,,IT,IT,FALSE
-TRUE,APP,APP,AppLovin Corp.,equity,IT,Software & Services,FALSE
-TRUE,ASML,ASML,,,IT,IT,FALSE
-TRUE,ASTS,ASTS,,,신성장,신성장,FALSE
-TRUE,AVAV,AVAV,,,신성장,신성장,FALSE
-TRUE,AVGO,AVGO,,,IT,IT,FALSE
-TRUE,BE,BE,Bloom Energy Corporation,equity,신성장,Capital Goods,FALSE
-TRUE,CEG,CEG,,,신성장,신성장,FALSE
-TRUE,COIN,COIN,,,신성장,신성장,FALSE
-TRUE,CRCL,CRCL,,,신성장,신성장,FALSE
-TRUE,CRDO,CRDO,,,IT,IT,FALSE
-TRUE,CRML,CRML,Critical Metals Corp.,equity,신성장,Materials,FALSE
-TRUE,CRWV,CRWV,"CoreWeave, Inc.",equity,IT,Software & Services,FALSE
-TRUE,CVNA,CVNA,Carvana Co.,equity,전통,Consumer Discretionary Distribution & Retail,FALSE
-TRUE,FIGR,FIGR,"FIGR, Inc.",equity,신성장,Financial Services,FALSE
-TRUE,FSLR,FSLR,"First Solar, Inc.",equity,신성장,Semiconductors & Semiconductor Equipment,FALSE
-TRUE,FSLY,FSLY,"Fastly, Inc.",equity,IT,Software & Services,FALSE
-TRUE,GEV,GEV,GE Vernova Inc.,equity,신성장,Capital Goods,FALSE
-TRUE,GLD,GLD,SPDR Gold Shares,etf,원자재,Commodity ETF,FALSE
-TRUE,GOOGL,GOOGL,,,IT,IT,FALSE
-TRUE,HOOD,HOOD,"Robinhood Markets, Inc.",equity,신성장,Financial Services,FALSE
-TRUE,IONQ,IONQ,"IonQ, Inc.",equity,신성장,Technology Hardware & Equipment,FALSE
-TRUE,IREN,IREN,,,UAM,UAM,FALSE
-TRUE,JOBY,JOBY,,,신성장,신성장,FALSE
-TRUE,KTOS,KTOS,,,신성장,신성장,FALSE
-TRUE,LITE,LITE,Lumentum Holdings Inc.,equity,IT,Technology Hardware & Equipment,FALSE
-TRUE,LLY,LLY,Eli Lilly and Company,equity,전통,"Pharmaceuticals, Biotechnology & Life Sciences",FALSE
-TRUE,LRCX,LRCX,,,IT,IT,FALSE
-TRUE,META,META,"Meta Platforms, Inc.",equity,IT,Media & Entertainment,FALSE
-TRUE,MOD,MOD,,,IT,IT,FALSE
-TRUE,MP,MP,MP Materials Corp.,equity,신성장,Materials,FALSE
-TRUE,MRVL,MRVL,"Marvell Technology, Inc.",equity,IT,Semiconductors & Semiconductor Equipment,FALSE
-TRUE,MU,MU,,,IT,IT,FALSE
-TRUE,NBIS,NBIS,Nebius Group N.V.,equity,IT,Software & Services,FALSE
-TRUE,NEE,NEE,,,전통,전통,FALSE
-TRUE,NFLX,NFLX,"Netflix, Inc.",equity,IT,Media & Entertainment,FALSE
-TRUE,NKE,NKE,"NIKE, Inc.",equity,전통,Consumer Durables & Apparel,FALSE
-TRUE,NOK,NOK,Nokia Oyj,equity,IT,Technology Hardware & Equipment,FALSE
-TRUE,NVDA,NVDA,,,IT,IT,FALSE
-TRUE,NVT,NVT,nVent Electric plc,equity,IT,Capital Goods,FALSE
-TRUE,NXT,NXT,Nextracker Inc.,equity,신성장,Capital Goods,FALSE
-TRUE,OKLO,OKLO,,,신성장,신성장,FALSE
-TRUE,ORCL,ORCL,,,IT,IT,FALSE
-TRUE,PL,PL,,equity,신성장,신성장,FALSE
-TRUE,PLTR,PLTR,Palantir Technologies Inc.,equity,IT,Software & Services,FALSE
-TRUE,QBTS,QBTS,,,신성장,신성장,FALSE
-TRUE,QCOM,QCOM,QUALCOMM Incorporated,equity,IT,Semiconductors & Semiconductor Equipment,FALSE
-TRUE,RDW,RDW,Redwire Corporation,equity,신성장,Capital Goods,FALSE
-TRUE,RKLB,RKLB,,,신성장,신성장,FALSE
-TRUE,SLV,SLV,iShares Silver Trust,etf,원자재,Commodity ETF,FALSE
-TRUE,TSLA,TSLA,,,신성장,신성장,FALSE
-TRUE,TSM,TSM,,,IT,IT,FALSE
-TRUE,USAR,USAR,"USA Rare Earth, Inc.",equity,신성장,Materials,FALSE
-TRUE,USO,USO,United States Oil Fund LP,etf,원자재,Commodity ETF,FALSE
-TRUE,VIAV,VIAV,,,IT,IT,FALSE
-TRUE,VRT,VRT,Vertiv Holdings Co.,equity,IT,Capital Goods,FALSE
-TRUE,VST,VST,,,전통,전통,FALSE
+TRUE,QQQ,QQQ,Invesco QQQ Trust,etf,ETF,Index ETF,TRUE
+TRUE,AAOI,AAOI,,equity,IT,AI 인프라,FALSE
+TRUE,ACHR,ACHR,,,신성장,모빌리티,FALSE
+TRUE,ADBE,ADBE,Adobe Inc.,equity,IT,소프트웨어,FALSE
+TRUE,ALM,ALM,Almonty Industries Inc.,equity,원자재,원자재,FALSE
+TRUE,AMAT,AMAT,,,IT,AI 인프라,FALSE
+TRUE,AMZN,AMZN,,,IT,AI 인프라,FALSE
+TRUE,APLD,APLD,,,IT,AI 인프라,FALSE
+TRUE,APP,APP,AppLovin Corp.,equity,IT,플랫폼,FALSE
+TRUE,ASML,ASML,,,IT,AI 인프라,FALSE
+TRUE,ASTS,ASTS,,,신성장,우주·방산,FALSE
+TRUE,AVAV,AVAV,,,전통,우주·방산,FALSE
+TRUE,AVGO,AVGO,,,IT,AI 인프라,FALSE
+TRUE,BE,BE,Bloom Energy Corporation,equity,신성장,전력,FALSE
+TRUE,CEG,CEG,,,전통,전력,FALSE
+TRUE,COIN,COIN,,,신성장,플랫폼,FALSE
+TRUE,CRCL,CRCL,,,신성장,플랫폼,FALSE
+TRUE,CRDO,CRDO,,,IT,AI 인프라,FALSE
+TRUE,CRML,CRML,Critical Metals Corp.,equity,원자재,원자재,FALSE
+TRUE,CRWV,CRWV,"CoreWeave, Inc.",equity,IT,AI 인프라,FALSE
+TRUE,CVNA,CVNA,Carvana Co.,equity,전통,모빌리티,FALSE
+TRUE,FIGR,FIGR,"FIGR, Inc.",equity,신성장,플랫폼,FALSE
+TRUE,FSLR,FSLR,"First Solar, Inc.",equity,신성장,전력,FALSE
+TRUE,FSLY,FSLY,"Fastly, Inc.",equity,IT,AI 인프라,FALSE
+TRUE,GEV,GEV,GE Vernova Inc.,equity,전통,전력,FALSE
+TRUE,GLD,GLD,SPDR Gold Shares,etf,원자재,원자재,FALSE
+TRUE,GOOGL,GOOGL,,,IT,플랫폼,FALSE
+TRUE,HOOD,HOOD,"Robinhood Markets, Inc.",equity,신성장,플랫폼,FALSE
+TRUE,IONQ,IONQ,"IonQ, Inc.",equity,신성장,양자,FALSE
+TRUE,IREN,IREN,,,신성장,AI 인프라,FALSE
+TRUE,JOBY,JOBY,,,신성장,모빌리티,FALSE
+TRUE,KTOS,KTOS,,,전통,우주·방산,FALSE
+TRUE,LITE,LITE,Lumentum Holdings Inc.,equity,IT,AI 인프라,FALSE
+TRUE,LLY,LLY,Eli Lilly and Company,equity,전통,방어·소비,FALSE
+TRUE,LRCX,LRCX,,,IT,AI 인프라,FALSE
+TRUE,META,META,"Meta Platforms, Inc.",equity,IT,플랫폼,FALSE
+TRUE,MOD,MOD,,,전통,AI 인프라,FALSE
+TRUE,MP,MP,MP Materials Corp.,equity,원자재,원자재,FALSE
+TRUE,MRVL,MRVL,"Marvell Technology, Inc.",equity,IT,AI 인프라,FALSE
+TRUE,MU,MU,,,IT,AI 인프라,FALSE
+TRUE,NBIS,NBIS,Nebius Group N.V.,equity,IT,AI 인프라,FALSE
+TRUE,NEE,NEE,,,전통,전력,FALSE
+TRUE,NFLX,NFLX,"Netflix, Inc.",equity,IT,플랫폼,FALSE
+TRUE,NKE,NKE,"NIKE, Inc.",equity,전통,방어·소비,FALSE
+TRUE,NOK,NOK,Nokia Oyj,equity,IT,AI 인프라,FALSE
+TRUE,NVDA,NVDA,,,IT,AI 인프라,FALSE
+TRUE,NVT,NVT,nVent Electric plc,equity,전통,AI 인프라,FALSE
+TRUE,NXT,NXT,Nextracker Inc.,equity,신성장,전력,FALSE
+TRUE,OKLO,OKLO,,,신성장,전력,FALSE
+TRUE,ORCL,ORCL,,,IT,AI 인프라,FALSE
+TRUE,PL,PL,,equity,신성장,우주·방산,FALSE
+TRUE,PLTR,PLTR,Palantir Technologies Inc.,equity,IT,소프트웨어,FALSE
+TRUE,QBTS,QBTS,,,신성장,양자,FALSE
+TRUE,QCOM,QCOM,QUALCOMM Incorporated,equity,IT,AI 인프라,FALSE
+TRUE,RDW,RDW,Redwire Corporation,equity,신성장,우주·방산,FALSE
+TRUE,RKLB,RKLB,,,신성장,우주·방산,FALSE
+TRUE,SLV,SLV,iShares Silver Trust,etf,원자재,원자재,FALSE
+TRUE,TSLA,TSLA,,,신성장,모빌리티,FALSE
+TRUE,TSM,TSM,,,IT,AI 인프라,FALSE
+TRUE,USAR,USAR,"USA Rare Earth, Inc.",equity,원자재,원자재,FALSE
+TRUE,USO,USO,United States Oil Fund LP,etf,원자재,원자재,FALSE
+TRUE,VIAV,VIAV,,,IT,AI 인프라,FALSE
+TRUE,VRT,VRT,Vertiv Holdings Co.,equity,전통,AI 인프라,FALSE
+TRUE,VST,VST,,,전통,전력,FALSE
