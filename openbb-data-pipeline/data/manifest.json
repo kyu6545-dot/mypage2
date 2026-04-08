@@ -1,6 +1,6 @@
 {
   "provider": "openbb_yfinance_fetcher",
-  "generated_at": "2026-04-08T23:02:07Z",
+  "generated_at": "2026-04-08T23:13:09Z",
   "start_date": "2020-01-02",
   "end_date": "2026-04-08",
   "field": "adjusted_close",
