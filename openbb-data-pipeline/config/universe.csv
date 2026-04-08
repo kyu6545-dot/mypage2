@@ -1,65 +1,65 @@
 active,ticker,provider_symbol,display_name,asset_type,sector,industry,benchmark
-TRUE,QQQ,QQQ,Invesco QQQ Trust,etf,벤치마크,NASDAQ 100 ETF,TRUE
-TRUE,AAOI,AAOI,,equity,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
-TRUE,ACHR,ACHR,,,신성장,UAM,FALSE
-TRUE,ADBE,ADBE,,equity,IT,AI 소프트웨어 - SaaS,FALSE
-TRUE,ALM,ALM,,equity,신성장,전략광물 - 희토류,FALSE
-TRUE,AMAT,AMAT,,,IT,AI 하드웨어 - 반도체 장비,FALSE
-TRUE,AMZN,AMZN,,,IT,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,APLD,APLD,,,IT,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,APP,APP,,equity,IT,AI 소프트웨어 - 광고,FALSE
-TRUE,ASML,ASML,,,IT,AI 하드웨어 - 반도체 장비,FALSE
-TRUE,ASTS,ASTS,,,신성장,우주/방산,FALSE
-TRUE,AVAV,AVAV,,,신성장,우주/방산,FALSE
-TRUE,AVGO,AVGO,,,IT,AI 하드웨어 - ASIC,FALSE
-TRUE,BE,BE,,equity,신성장,청정에너지 - 연료전지,FALSE
-TRUE,CEG,CEG,,,신성장,원자력,FALSE
-TRUE,COIN,COIN,,,신성장,암호화폐 - 거래소,FALSE
-TRUE,CRCL,CRCL,,,신성장,암호화폐 - 핀테크,FALSE
-TRUE,CRDO,CRDO,,,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
-TRUE,CRML,CRML,,equity,신성장,전략광물 - 희토류,FALSE
-TRUE,CRWV,CRWV,,equity,IT,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,CVNA,CVNA,,equity,전통,이커머스 - 중고차 플랫폼,FALSE
-TRUE,FIGR,FIGR,,equity,신성장,암호화폐 - 핀테크,FALSE
-TRUE,FSLR,FSLR,,equity,신성장,태양광,FALSE
-TRUE,FSLY,FSLY,,equity,IT,AI 소프트웨어 - 엣지클라우드/CDN,FALSE
-TRUE,GEV,GEV,,equity,신성장,전력인프라 - 전력설비/그리드,FALSE
-TRUE,GLD,GLD,,etf,원자재,귀금속 - 금 ETF,FALSE
-TRUE,GOOGL,GOOGL,,,IT,AI 소프트웨어 - 클라우드,FALSE
-TRUE,HOOD,HOOD,,equity,신성장,핀테크 - 거래소,FALSE
-TRUE,IONQ,IONQ,,equity,신성장,양자컴퓨팅,FALSE
-TRUE,IREN,IREN,,,UAM,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,JOBY,JOBY,,,신성장,UAM,FALSE
-TRUE,KTOS,KTOS,,,신성장,UAM,FALSE
-TRUE,LITE,LITE,,equity,IT,AI 하드웨어 - 광통신,FALSE
-TRUE,LLY,LLY,,equity,전통,바이오 - 비만치료제,FALSE
-TRUE,LRCX,LRCX,,,IT,AI 하드웨어 - 반도체 장비,FALSE
-TRUE,META,META,,equity,IT,AI 소프트웨어 - 광고,FALSE
-TRUE,MOD,MOD,,,IT,AI 하드웨어 - 전력/냉각 인프라,FALSE
-TRUE,MP,MP,,equity,신성장,전략광물 - 희토류,FALSE
-TRUE,MRVL,MRVL,,equity,IT,AI 하드웨어 - 네트워크/ASIC,FALSE
-TRUE,MU,MU,,,IT,AI 하드웨어 - 메모리,FALSE
-TRUE,NBIS,NBIS,,equity,IT,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,NEE,NEE,,,전통,전력,FALSE
-TRUE,NFLX,NFLX,,equity,IT,플랫폼,FALSE
-TRUE,NKE,NKE,,equity,전통,브랜드 - 스포츠웨어,FALSE
-TRUE,NOK,NOK,,equity,IT,AI 하드웨어 - 통신장비,FALSE
-TRUE,NVDA,NVDA,,,IT,AI 하드웨어 - GPU,FALSE
-TRUE,NVT,NVT,,equity,IT,AI 하드웨어 - 전력/냉각 인프라,FALSE
-TRUE,NXT,NXT,,equity,신성장,태양광,FALSE
-TRUE,OKLO,OKLO,,,신성장,원자력 - SMR,FALSE
-TRUE,ORCL,ORCL,,,IT,AI 하드웨어 - 데이터센터 인프라,FALSE
-TRUE,PL,PL,,equity,신성장,우주/방산,FALSE
-TRUE,PLTR,PLTR,,equity,IT,AI 소프트웨어 - SaaS,FALSE
-TRUE,QBTS,QBTS,,,신성장,양자컴퓨팅,FALSE
-TRUE,QCOM,QCOM,,equity,IT,AI 하드웨어 - 모바일칩/엣지AI,FALSE
-TRUE,RDW,RDW,,equity,신성장,우주/방산,FALSE
-TRUE,RKLB,RKLB,,,신성장,,FALSE
-TRUE,SLV,SLV,,etf,원자재,귀금속 - 은 ETF,FALSE
-TRUE,TSLA,TSLA,,,신성장,전기차/로봇,FALSE
-TRUE,TSM,TSM,,,IT,AI 하드웨어 - 파운드리,FALSE
-TRUE,USAR,USAR,,equity,신성장,전략광물 - 희토류,FALSE
-TRUE,USO,USO,,etf,원자재,에너지 - 원유 ETF,FALSE
-TRUE,VIAV,VIAV,,,IT,AI 하드웨어 - 반도체 장비,FALSE
-TRUE,VRT,VRT,,equity,IT,AI 하드웨어 - 전력/냉각 인프라,FALSE
-TRUE,VST,VST,,,전통,에너지,FALSE
+TRUE,QQQ,QQQ,Invesco QQQ Trust,etf,벤치마크,Index ETF,TRUE
+TRUE,AAOI,AAOI,,equity,IT,IT,FALSE
+TRUE,ACHR,ACHR,,,신성장,신성장,FALSE
+TRUE,ADBE,ADBE,Adobe Inc.,equity,IT,Software & Services,FALSE
+TRUE,ALM,ALM,Almonty Industries Inc.,equity,신성장,Materials,FALSE
+TRUE,AMAT,AMAT,,,IT,IT,FALSE
+TRUE,AMZN,AMZN,,,IT,IT,FALSE
+TRUE,APLD,APLD,,,IT,IT,FALSE
+TRUE,APP,APP,AppLovin Corp.,equity,IT,Software & Services,FALSE
+TRUE,ASML,ASML,,,IT,IT,FALSE
+TRUE,ASTS,ASTS,,,신성장,신성장,FALSE
+TRUE,AVAV,AVAV,,,신성장,신성장,FALSE
+TRUE,AVGO,AVGO,,,IT,IT,FALSE
+TRUE,BE,BE,Bloom Energy Corporation,equity,신성장,Capital Goods,FALSE
+TRUE,CEG,CEG,,,신성장,신성장,FALSE
+TRUE,COIN,COIN,,,신성장,신성장,FALSE
+TRUE,CRCL,CRCL,,,신성장,신성장,FALSE
+TRUE,CRDO,CRDO,,,IT,IT,FALSE
+TRUE,CRML,CRML,Critical Metals Corp.,equity,신성장,Materials,FALSE
+TRUE,CRWV,CRWV,"CoreWeave, Inc.",equity,IT,Software & Services,FALSE
+TRUE,CVNA,CVNA,Carvana Co.,equity,전통,Consumer Discretionary Distribution & Retail,FALSE
+TRUE,FIGR,FIGR,"FIGR, Inc.",equity,신성장,Financial Services,FALSE
+TRUE,FSLR,FSLR,"First Solar, Inc.",equity,신성장,Semiconductors & Semiconductor Equipment,FALSE
+TRUE,FSLY,FSLY,"Fastly, Inc.",equity,IT,Software & Services,FALSE
+TRUE,GEV,GEV,GE Vernova Inc.,equity,신성장,Capital Goods,FALSE
+TRUE,GLD,GLD,SPDR Gold Shares,etf,원자재,Commodity ETF,FALSE
+TRUE,GOOGL,GOOGL,,,IT,IT,FALSE
+TRUE,HOOD,HOOD,"Robinhood Markets, Inc.",equity,신성장,Financial Services,FALSE
+TRUE,IONQ,IONQ,"IonQ, Inc.",equity,신성장,Technology Hardware & Equipment,FALSE
+TRUE,IREN,IREN,,,UAM,UAM,FALSE
+TRUE,JOBY,JOBY,,,신성장,신성장,FALSE
+TRUE,KTOS,KTOS,,,신성장,신성장,FALSE
+TRUE,LITE,LITE,Lumentum Holdings Inc.,equity,IT,Technology Hardware & Equipment,FALSE
+TRUE,LLY,LLY,Eli Lilly and Company,equity,전통,"Pharmaceuticals, Biotechnology & Life Sciences",FALSE
+TRUE,LRCX,LRCX,,,IT,IT,FALSE
+TRUE,META,META,"Meta Platforms, Inc.",equity,IT,Media & Entertainment,FALSE
+TRUE,MOD,MOD,,,IT,IT,FALSE
+TRUE,MP,MP,MP Materials Corp.,equity,신성장,Materials,FALSE
+TRUE,MRVL,MRVL,"Marvell Technology, Inc.",equity,IT,Semiconductors & Semiconductor Equipment,FALSE
+TRUE,MU,MU,,,IT,IT,FALSE
+TRUE,NBIS,NBIS,Nebius Group N.V.,equity,IT,Software & Services,FALSE
+TRUE,NEE,NEE,,,전통,전통,FALSE
+TRUE,NFLX,NFLX,"Netflix, Inc.",equity,IT,Media & Entertainment,FALSE
+TRUE,NKE,NKE,"NIKE, Inc.",equity,전통,Consumer Durables & Apparel,FALSE
+TRUE,NOK,NOK,Nokia Oyj,equity,IT,Technology Hardware & Equipment,FALSE
+TRUE,NVDA,NVDA,,,IT,IT,FALSE
+TRUE,NVT,NVT,nVent Electric plc,equity,IT,Capital Goods,FALSE
+TRUE,NXT,NXT,Nextracker Inc.,equity,신성장,Capital Goods,FALSE
+TRUE,OKLO,OKLO,,,신성장,신성장,FALSE
+TRUE,ORCL,ORCL,,,IT,IT,FALSE
+TRUE,PL,PL,,equity,신성장,신성장,FALSE
+TRUE,PLTR,PLTR,Palantir Technologies Inc.,equity,IT,Software & Services,FALSE
+TRUE,QBTS,QBTS,,,신성장,신성장,FALSE
+TRUE,QCOM,QCOM,QUALCOMM Incorporated,equity,IT,Semiconductors & Semiconductor Equipment,FALSE
+TRUE,RDW,RDW,Redwire Corporation,equity,신성장,Capital Goods,FALSE
+TRUE,RKLB,RKLB,,,신성장,신성장,FALSE
+TRUE,SLV,SLV,iShares Silver Trust,etf,원자재,Commodity ETF,FALSE
+TRUE,TSLA,TSLA,,,신성장,신성장,FALSE
+TRUE,TSM,TSM,,,IT,IT,FALSE
+TRUE,USAR,USAR,"USA Rare Earth, Inc.",equity,신성장,Materials,FALSE
+TRUE,USO,USO,United States Oil Fund LP,etf,원자재,Commodity ETF,FALSE
+TRUE,VIAV,VIAV,,,IT,IT,FALSE
+TRUE,VRT,VRT,Vertiv Holdings Co.,equity,IT,Capital Goods,FALSE
+TRUE,VST,VST,,,전통,전통,FALSE
