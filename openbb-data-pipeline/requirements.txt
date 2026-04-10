@@ -1,2 +1,5 @@
 openbb
+openbb-core
+openbb-yfinance
 pandas
+yfinance

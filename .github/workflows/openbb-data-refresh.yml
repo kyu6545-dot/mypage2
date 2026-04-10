@@ -26,9 +26,9 @@ jobs:
       - name: Install OpenBB
         run: |
           python -m pip install --upgrade pip
-          pip install openbb pandas
+          pip install -r openbb-data-pipeline/requirements.txt
 
-      - name: Build price artifacts
+      - name: Build market data artifacts
         working-directory: openbb-data-pipeline
         run: |
           python build_openbb_dataset.py --start-date 2020-01-02

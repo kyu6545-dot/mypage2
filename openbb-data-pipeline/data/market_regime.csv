@@ -1,0 +1,2 @@
+date,vix_close,tnx_close,irx_close,term_spread_10y_3m,hyg_lqd_ratio,qqq_momentum_12_1,qqq_drawdown_252,qqq_vol_ratio_20_60,risk_on_prob,neutral_prob,risk_off_prob,forecast_confidence,market_regime
+2026-04-10,19.22999954,4.31699991,3.59299994,0.72399998,0.73223444,0.30871779,-0.03639872,1.20821105,0.99997193,0.00000015,0.00002792,0.99997193,risk_on
