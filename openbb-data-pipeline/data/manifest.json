@@ -1,12 +1,12 @@
 {
   "provider": "openbb_yfinance_fetcher_with_snapshot_signals",
-  "generated_at": "2026-04-10T22:57:37Z",
+  "generated_at": "2026-04-13T23:04:42Z",
   "start_date": "2020-01-02",
-  "end_date": "2026-04-10",
+  "end_date": "2026-04-13",
   "field": "adjusted_close",
-  "matrix_rows": 1576,
+  "matrix_rows": 1577,
   "first_price_date": "2020-01-02",
-  "last_price_date": "2026-04-10",
+  "last_price_date": "2026-04-13",
   "ticker_count": 64,
   "success_count": 64,
   "error_count": 0,
@@ -77,12 +77,12 @@
     "VST"
   ],
   "failed_tickers": [],
-  "forward_signal_rows": 64,
-  "market_regime_rows": 1,
+  "forward_signal_rows": 128,
+  "market_regime_rows": 2,
   "forward_signal_error_count": 0,
   "market_regime_error_count": 0,
   "forward_signal_failed_tickers": [],
   "market_regime_failed_inputs": [],
-  "forward_signal_snapshot_date": "2026-04-10",
-  "market_regime_snapshot_date": "2026-04-10"
+  "forward_signal_snapshot_date": "2026-04-13",
+  "market_regime_snapshot_date": "2026-04-13"
 }
