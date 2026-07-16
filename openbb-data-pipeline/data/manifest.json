@@ -1,16 +1,17 @@
 {
   "provider": "openbb_yfinance_fetcher_with_snapshot_signals",
-  "generated_at": "2026-07-15T23:13:06Z",
+  "generated_at": "2026-07-16T23:11:18Z",
   "start_date": "2020-01-02",
-  "end_date": "2026-07-15",
+  "end_date": "2026-07-16",
   "field": "adjusted_close",
-  "matrix_rows": 1641,
+  "matrix_rows": 1642,
   "first_price_date": "2020-01-02",
-  "last_price_date": "2026-07-15",
+  "last_price_date": "2026-07-16",
   "ticker_count": 64,
-  "success_count": 63,
-  "error_count": 1,
+  "success_count": 64,
+  "error_count": 0,
   "success_tickers": [
+    "QQQ",
     "AAOI",
     "ACHR",
     "ADBE",
@@ -75,17 +76,13 @@
     "VRT",
     "VST"
   ],
-  "failed_tickers": [
-    "QQQ"
-  ],
-  "forward_signal_rows": 4159,
-  "market_regime_rows": 67,
-  "forward_signal_error_count": 1,
+  "failed_tickers": [],
+  "forward_signal_rows": 4223,
+  "market_regime_rows": 68,
+  "forward_signal_error_count": 0,
   "market_regime_error_count": 0,
-  "forward_signal_failed_tickers": [
-    "QQQ"
-  ],
+  "forward_signal_failed_tickers": [],
   "market_regime_failed_inputs": [],
-  "forward_signal_snapshot_date": "2026-07-15",
-  "market_regime_snapshot_date": "2026-07-15"
+  "forward_signal_snapshot_date": "2026-07-16",
+  "market_regime_snapshot_date": "2026-07-16"
 }
