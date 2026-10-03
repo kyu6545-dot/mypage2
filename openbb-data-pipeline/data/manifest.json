@@ -1,8 +1,8 @@
 {
   "provider": "openbb_yfinance_fetcher_with_snapshot_signals",
-  "generated_at": "2026-10-02T01:42:44Z",
+  "generated_at": "2026-10-03T01:13:16Z",
   "start_date": "2020-01-02",
-  "end_date": "2026-10-02",
+  "end_date": "2026-10-03",
   "field": "adjusted_close",
   "matrix_rows": 1696,
   "first_price_date": "2020-01-02",
@@ -78,11 +78,11 @@
   ],
   "failed_tickers": [],
   "forward_signal_rows": 7551,
-  "market_regime_rows": 123,
+  "market_regime_rows": 124,
   "forward_signal_error_count": 0,
   "market_regime_error_count": 0,
   "forward_signal_failed_tickers": [],
   "market_regime_failed_inputs": [],
   "forward_signal_snapshot_date": "2026-10-01",
-  "market_regime_snapshot_date": "2026-10-01"
+  "market_regime_snapshot_date": "2026-10-02"
 }
